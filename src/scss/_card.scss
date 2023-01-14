@@ -1,0 +1,142 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable csstree/validator */
+@use './_colors.scss';
+@use './_fonts.scss';
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 327px;
+  margin-inline: auto;
+  border-radius: 8px;
+
+  &>* {
+    padding: 48px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    max-width: 920px;
+
+    &>* {
+      flex: 1;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-img {
+      display: block;
+      width: 64px;
+      height: auto;
+      margin-block-end: 35px;
+    }
+
+    &-title {
+      font-family: fonts.$secondary-ff;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      text-transform: uppercase;
+      color: colors.$very-light-grey;
+      margin-block-end: 25px;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 25px;
+      color: colors.$transparent-white;
+      margin-block-end: 25px;
+
+      @media only screen and (min-width: 768px) {
+        margin-block-end: 83px;
+      }
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 25px;
+      text-decoration: none;
+      background-color: colors.$transparent-white;
+      border-radius: 25px;
+      padding: 12px 30px;
+
+      &.link--sudan {
+        background-color: colors.$light;
+        color: colors.$bright-orange;
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid colors.$light;
+          color: colors.$light;
+          padding: 10px 28px;
+        }
+      }
+
+      &.link--suv {
+        background-color: colors.$light;
+        color: colors.$dark-cyan;
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid colors.$light;
+          color: colors.$light;
+          padding: 10px 28px;
+        }
+      }
+
+      &.link--luxury {
+        background-color: colors.$light;
+        color: colors.$very-dark-cyan;
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid colors.$light;
+          color: colors.$light;
+          padding: 10px 28px;
+        }
+      }
+    }
+
+    &.sudan {
+      background-color: colors.$bright-orange;
+      border-radius: 8px 8px 0 0;
+
+      @media only screen and (min-width: 768px) {
+        border-radius: 8px 0 0 8px;
+      }
+    }
+
+    &.suv {
+      background-color: colors.$dark-cyan;
+      margin-block-start: -8px;
+      border-radius: 8px 8px 0 0;
+
+      @media only screen and (min-width: 768px) {
+        margin-block-start: 0;
+        border-radius: 8px 0 0 8px;
+        margin-inline-start: -8px;
+      }
+    }
+
+    &.luxury {
+      background-color: colors.$very-dark-cyan;
+      margin-block-start: -8px;
+      border-radius: 8px;
+
+      @media only screen and (min-width: 768px) {
+        margin-block-start: 0;
+        margin-inline-start: -8px;
+      }
+    }
+  }
+}
