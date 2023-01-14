@@ -20,6 +20,7 @@
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     max-width: 920px;
+    margin-block-start: 21px;
 
     &>* {
       flex: 1;
